@@ -25,7 +25,7 @@ class Feed extends Component {
   }
 
   registerToSocket = () => {
-    const socket = io('http://localhost:3333');
+    const socket = io(process.env.REACT_APP_API_URL);
 
     // post, like
 
@@ -60,7 +60,7 @@ class Feed extends Component {
               <img src={more} alt="Mais" />
             </header>
 
-            <img src={`http://localhost:3333/files/${post.image}`} alt="Descrição" />
+            <img src={`${process.env.REACT_APP_API_URL}/files/${post.image}`} alt="Descrição" />
 
             <footer>
               <div className="actions">
