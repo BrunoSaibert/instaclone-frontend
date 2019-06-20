@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import api from '../services/api';
 import io from 'socket.io-client';
 
@@ -17,7 +18,7 @@ class Feed extends Component {
   async componentDidMount() {
     this.registerToSocket();
 
-    const response = await api.get('posts');
+    const response = await api.get('/posts');
 
     this.setState({
       feed: response.data
